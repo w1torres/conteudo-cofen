@@ -1,0 +1,135 @@
+{
+  "concurso": "CNU - Analista de Sistemas (Cofen)",
+  "disciplinas": [
+    {
+      "id": "seguranca",
+      "area": "Segurança da Informação",
+      "category": "especifico",
+      "topics": [
+        { "id": "sec-1", "topic": "1. Conceitos básicos de segurança da informação", "details": "Princípios, confidencialidade, integridade e disponibilidade." },
+        { "id": "sec-2", "topic": "2. Políticas de segurança", "details": "Diretrizes, normas e controles organizacionais." },
+        { "id": "sec-3", "topic": "3. Vulnerabilidades e ameaças", "details": "Tipos de ataques, riscos e mitigação." },
+        { "id": "sec-4", "topic": "4. Implementação de diretrizes de segurança", "details": "Aplicação prática de políticas." },
+        { "id": "sec-5", "topic": "5. Auditoria e revisão de políticas de segurança", "details": "Avaliação e melhoria contínua." }
+      ]
+    },
+    {
+      "id": "governanca_ti",
+      "area": "Governança de TI",
+      "category": "especifico",
+      "topics": [
+        { "id": "gti-1", "topic": "1. Gerenciamento de Serviços de TI (ITIL)", "details": "Conceitos e boas práticas." },
+        { "id": "gti-2", "topic": "2. Gerenciamento de Projetos (PMBOK)", "details": "Estrutura e processos." },
+        { "id": "gti-3", "topic": "3. Gerenciamento de riscos em TI", "details": "Identificação, análise e mitigação." }
+      ]
+    },
+    {
+      "id": "banco_dados",
+      "area": "Banco de Dados",
+      "category": "especifico",
+      "topics": [
+        { "id": "bd-1", "topic": "1. Noções de banco de dados", "details": "Conceitos básicos e definições." },
+        { "id": "bd-2", "topic": "2. Modelo Entidade-Relacionamento", "details": "Modelagem de dados." },
+        { "id": "bd-3", "topic": "3. Restrições de integridade", "details": "Chaves, consistência e integridade." },
+        { "id": "bd-4", "topic": "4. SQL", "details": "Structured Query Language." },
+        { "id": "bd-5", "topic": "5. Estruturas de dados em banco", "details": "Tabelas, views, índices, chaves e relacionamentos." }
+      ]
+    },
+    {
+      "id": "governanca_dados",
+      "area": "Governança de Dados",
+      "category": "especifico",
+      "topics": [
+        { "id": "gd-1", "topic": "1. Princípios de governança de dados", "details": "Conceitos e práticas." },
+        { "id": "gd-2", "topic": "2. LGPD aplicada a dados", "details": "Proteção e privacidade." },
+        { "id": "gd-3", "topic": "3. Metadados", "details": "Gestão e organização." }
+      ]
+    },
+    {
+      "id": "programacao",
+      "area": "Programação e Web",
+      "category": "especifico",
+      "topics": [
+        { "id": "prog-1", "topic": "1. Linguagem Qlik", "details": "Uso em análise de dados." },
+        { "id": "prog-2", "topic": "2. Python", "details": "Programação e automação." },
+        { "id": "prog-3", "topic": "3. Desenvolvimento Web", "details": "HTML5, CSS, Javascript, XML, JSON." }
+      ]
+    },
+    {
+      "id": "engenharia_software",
+      "area": "Engenharia de Software",
+      "category": "especifico",
+      "topics": [
+        { "id": "es-1", "topic": "1. Análise e Projeto de Sistemas", "details": "Fundamentos e práticas." },
+        { "id": "es-2", "topic": "2. UML", "details": "Diagramas de classes, interação, estados e atividades." },
+        { "id": "es-3", "topic": "3. Projeto de Software", "details": "Arquitetura, estrutura de dados e modularidade." },
+        { "id": "es-4", "topic": "4. Teste de Software", "details": "Caixa branca, preta, integração e validação." },
+        { "id": "es-5", "topic": "5. Análise de Sistemas", "details": "Requisitos, metodologias e prototipação." }
+      ]
+    },
+    {
+      "id": "metodologias",
+      "area": "Metodologias de Desenvolvimento",
+      "category": "especifico",
+      "topics": [
+        { "id": "met-1", "topic": "1. PMBOK", "details": "Gerenciamento de projetos." },
+        { "id": "met-2", "topic": "2. Agile", "details": "Metodologias ágeis." },
+        { "id": "met-3", "topic": "3. Scrum e Kanban", "details": "Frameworks ágeis." },
+        { "id": "met-4", "topic": "4. Design Thinking", "details": "Inovação e solução de problemas." },
+        { "id": "met-5", "topic": "5. Modelos tradicionais", "details": "Cascata, CPM, CCPM." }
+      ]
+    },
+    {
+      "id": "cloud_virtualizacao",
+      "area": "Virtualização e Cloud",
+      "category": "especifico",
+      "topics": [
+        { "id": "cloud-1", "topic": "1. Virtualização", "details": "Conceitos e tecnologias (VMware, Hyper-V)." },
+        { "id": "cloud-2", "topic": "2. Cloud Computing", "details": "Implantação e gerenciamento." }
+      ]
+    },
+    {
+      "id": "automacao",
+      "area": "Automação de Processos",
+      "category": "especifico",
+      "topics": [
+        { "id": "auto-1", "topic": "1. Automação de tarefas", "details": "Infraestrutura e processos." },
+        { "id": "auto-2", "topic": "2. Ferramentas de automação", "details": "Ansible, Puppet, Chef." },
+        { "id": "auto-3", "topic": "3. Scripts de automação", "details": "Desenvolvimento e uso." }
+      ]
+    },
+    {
+      "id": "bi_analytics",
+      "area": "BI e Analytics",
+      "category": "especifico",
+      "topics": [
+        { "id": "bi-1", "topic": "1. Conceitos de dados", "details": "Dado, informação, conhecimento e inteligência." },
+        { "id": "bi-2", "topic": "2. Arquitetura analítica", "details": "Sistemas analíticos e requisitos." },
+        { "id": "bi-3", "topic": "3. ETL, OLAP e SQL", "details": "Processamento e análise." },
+        { "id": "bi-4", "topic": "4. Bancos relacionais e NoSQL", "details": "Oracle, SQL Server, PostgreSQL, MySQL." }
+      ]
+    },
+    {
+      "id": "modelagem_dados",
+      "area": "Modelagem de Dados",
+      "category": "especifico",
+      "topics": [
+        { "id": "md-1", "topic": "1. Modelo entidade-relacionamento", "details": "Modelagem conceitual." },
+        { "id": "md-2", "topic": "2. Modelagem lógica e física", "details": "Estrutura de banco de dados." },
+        { "id": "md-3", "topic": "3. Data Warehouse e Data Lake", "details": "Armazenamento analítico." }
+      ]
+    },
+    {
+      "id": "tratamento_dados",
+      "area": "Tratamento de Dados",
+      "category": "especifico",
+      "topics": [
+        { "id": "td-1", "topic": "1. Normalização numérica", "details": "Padronização de dados." },
+        { "id": "td-2", "topic": "2. Discretização", "details": "Transformação de dados." },
+        { "id": "td-3", "topic": "3. Tratamento de dados ausentes", "details": "Limpeza de dados." },
+        { "id": "td-4", "topic": "4. Outliers e agregações", "details": "Análise e ajuste." },
+        { "id": "td-5", "topic": "5. ETL e ELT", "details": "Processamento de dados." }
+      ]
+    }
+  ]
+}

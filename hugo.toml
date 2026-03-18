@@ -1,0 +1,62 @@
+# ==========================================
+# 1. CONFIGURAÇÕES GLOBAIS
+# (Sempre no topo, antes de qualquer [tabela])
+# ==========================================
+baseURL = 'https://w1torres.github.io/concurso-hugo/'
+languageCode = 'pt-br'
+title = 'Estudo para Concursos'
+theme = 'hugo-book'
+
+# Importante para GitHub Pages em subdiretório
+canonifyURLs = true
+relativeURLs = false
+disablePathToLower = false
+
+# Remove categorias e tags que o tema "Book" não utiliza
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+# ==========================================
+# 2. PARAMS (Configurações do Tema Hugo Book)
+# ==========================================
+[params]
+  # O tema deve escanear a raiz para montar o menu
+  BookSection = "/"
+  
+  # Ativa Sumário, Busca e Links do Repositório
+  BookToC = true
+  BookSearch = true
+  BookRepo = "https://github.com/w1torres/conteudo-hugo"
+  
+  # Caminho para o CSS personalizado (static/css/custom.css)
+  customCSS = ["css/custom.css"]
+  BookMenuBundle = false
+
+# ==========================================
+# 3. MENU SUPERIOR
+# ==========================================
+[menu]
+  [[menu.before]]
+    name = "Início"
+    url = "/"
+    weight = 1
+
+# ==========================================
+# 4. MARKUP (Renderização do Markdown)
+# ==========================================
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true # Necessário para HTML dentro do Markdown
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+# ==========================================
+# 5. OUTRAS CONFIGURAÇÕES
+# ==========================================
+[frontmatter]
+  priority = ["weight", "date", "publishDate", "lastmod"]
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+  page = ["HTML"]

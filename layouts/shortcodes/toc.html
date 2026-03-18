@@ -1,0 +1,61 @@
+{{ if .TableOfContents }}
+<aside class="toc-container">
+  <div class="book-toc">
+    <strong class="toc-title">
+      <span class="toc-icon">📍</span> Sumário do Tópico
+    </strong>
+    <nav id="TableOfContents">
+      {{ .TableOfContents }}
+    </nav>
+  </div>
+</aside>
+
+<style>
+  .toc-container {
+    background: #fdfdfd;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+
+  .toc-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 0.5rem;
+  }
+
+  .toc-icon {
+    margin-right: 8px;
+  }
+
+  /* Estiliza a lista gerada pelo Hugo */
+  #TableOfContents ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+  }
+
+  #TableOfContents ul li {
+    margin: 5px 0;
+  }
+
+  #TableOfContents a {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  #TableOfContents a:hover {
+    color: #3182ce;
+    text-decoration: underline;
+  }
+</style>
+<hr>
+{{ end }}
