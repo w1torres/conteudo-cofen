@@ -7,6 +7,10 @@ import { buildPrompt } from './generator/promptBuilder.js';
 async function main() {
   console.log("🚀 Iniciando geração do material...");
 
+  const TEST_MODE = false; // 🔥 ativa/desativa teste
+  const TEST_TOPIC_ID = "es-4"; // 👈 escolha o tópico
+  const FORCE_REGENERATE = true; // 🔥 força recriar conteúdo
+
   const edital = await fs.readJson('./edital/edital.json');
   await prepareDirectories(edital);
 
@@ -14,25 +18,34 @@ async function main() {
     console.log(`\n📚 Processando área: ${disc.area}`);
 
     for (const item of disc.topics) {
-      // Cria um nome de arquivo amigável (slug)
+
+      // 🔥 MODO TESTE (filtra apenas 1 tópico)
+      if (TEST_MODE && item.id !== TEST_TOPIC_ID) {
+        continue;
+      }
+
       const safeFileName = item.topic
         .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
-        .replace(/[^a-z0-9]/g, "-") // Remove caracteres especiais
-        .replace(/-+/g, "-") // Remove hífens duplicados
-        .substring(0, 50); // Limita tamanho
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]/g, "-")
+        .replace(/-+/g, "-")
+        .substring(0, 50);
 
       const filePath = path.join(process.cwd(), 'content', disc.id, `${safeFileName}.md`);
 
-      if (await fs.pathExists(filePath)) {
+      // 🔥 controle de regeneração
+      if (!FORCE_REGENERATE && await fs.pathExists(filePath)) {
         console.log(`  ⏩ Pulando: ${item.topic}`);
         continue;
       }
 
       console.log(`  📝 Gerando: ${item.topic}...`);
-      
-      // Passa disciplina, tópico e os detalhes do seu JSON para o prompt
+
       const prompt = buildPrompt(disc.area, item.topic, item.details);
+
+      // 🔍 DEBUG DO PROMPT
+      console.log("\n📤 Prompt (preview):\n", prompt.substring(0, 300), "...\n");
+
       const content = await generateAIContent(prompt);
 
       const frontmatter = `---
@@ -42,9 +55,17 @@ date: ${new Date().toISOString()}
 
 ${content}
 `;
+
       await fs.writeFile(filePath, frontmatter);
+
+      // 🔥 para após 1 geração
+      if (TEST_MODE) {
+        console.log("\n🧪 TESTE FINALIZADO (1 conteúdo gerado)");
+        return;
+      }
     }
   }
+
   console.log("\n✅ Material gerado com sucesso!");
 }
 

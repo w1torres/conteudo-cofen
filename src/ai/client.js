@@ -14,7 +14,7 @@ export async function generateAIContent(prompt) {
       messages: [
         { 
           role: "system", 
-          content: "Você é um professor especialista em concursos públicos brasileiros, focado na banca CEBRASPE. Sua linguagem é técnica, precisa e baseada estritamente na bibliografia informada." 
+          content: "Você é um especialista em Tecnologia da Informação para concursos públicos, focado em gerar conteúdo técnico profundo e voltado para provas no estilo certo ou errado."
         },
         { role: "user", content: prompt }
       ],

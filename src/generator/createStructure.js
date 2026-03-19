@@ -15,8 +15,8 @@ export async function prepareDirectories(edital) {
     await fs.writeFile(path.join(discPath, '_index.md'), indexContent);
 
     // Se você já tiver os tópicos no seu JSON do edital:
-    if (disc.topicos) {
-      for (const [tIdx, topico] of disc.topicos.entries()) {
+    if (disc.topics) {
+      for (const [tIdx, topico] of disc.topics.entries()) {
         const topicoPath = path.join(discPath, `${topico.id}.md`);
         // O weight garante a ordem correta dos tópicos dentro da disciplina
         const topicoContent = `---\ntitle: "${topico.nome}"\nweight: ${tIdx + 1}\n---\n\nConteúdo sendo gerado...`;

@@ -1,64 +1,111 @@
 export function buildPrompt(disciplina, topico, detalhes) {
   return `
-Você é um especialista em TI focado em concursos públicos da banca QUADRIX.
+Você é um especialista em Tecnologia da Informação focado em concursos públicos (banca QUADRIX, estilo CERTO/ERRADO).
 
-Objetivo: gerar material técnico de revisão para prova no estilo CERTO ou ERRADO,
-com foco em precisão conceitual, definições corretas e pegadinhas comuns.
+Objetivo: gerar material técnico COMPLETO, DENSO e orientado para prova, adaptando automaticamente o nível de profundidade ao tipo de conteúdo.
 
 DISCIPLINA: ${disciplina}
 TÓPICO: ${topico}
 DETALHES: ${detalhes}
 
-DIRETRIZES:
-- Vá direto ao conteúdo técnico (sem introduções).
-- Priorize conceitos mais cobrados em prova.
-- Destaque definições exatas (cuidado com termos absolutos: sempre, nunca, apenas).
-- Inclua diferenças entre conceitos semelhantes.
-- Use linguagem objetiva e clara.
-- Limite total: até 700 palavras.
+DIRETRIZES GERAIS:
+- NÃO gerar conteúdo superficial ou genérico.
+- NÃO omitir partes importantes do tema.
+- Explicar em nível de prova (como a banca cobra).
+- Priorizar regras, classificações, funcionamento e diferenças.
+- Limite: até 1200 palavras.
 
-REGRAS ESPECÍFICAS:
-- Se for TI: incluir exemplos práticos (SQL, código, comandos).
-- Se for dados/software: destacar regras formais (normalização, arquitetura).
-- Se for segurança: destacar ameaças, controles e confusões comuns.
-- Se for governança/legislação: citar normas relevantes (LGPD, Lei 14.133).
-- Sempre incluir possíveis pegadinhas conceituais.
+ADAPTAÇÃO POR CONTEXTO (OBRIGATÓRIO):
+
+1. Se for LEGISLAÇÃO / GOVERNANÇA:
+- Cobrir obrigatoriamente:
+  - definições formais
+  - classificações
+  - princípios
+  - bases legais
+  - direitos
+  - penalidades
+- Estruturar como checklist de prova
+
+2. Se for ENGENHARIA DE SOFTWARE:
+- Explicar:
+  - arquitetura (ex: monolito vs microserviços)
+  - padrões (GoF, SOLID)
+  - fluxo de funcionamento
+  - boas práticas e anti-patterns
+  - ciclo de vida
+- Incluir exemplos técnicos (código ou estrutura)
+
+3. Se for DADOS / BANCO DE DADOS:
+- Detalhar:
+  - modelagem (conceitual, lógica, física)
+  - normalização (regras formais)
+  - SQL e comportamento
+  - ETL/ELT
+- Incluir exemplos técnicos
+
+4. Se for INFRA / REDES / CLOUD:
+- Explicar:
+  - protocolos e funcionamento interno
+  - arquitetura
+  - fluxo de comunicação
+  - comandos e configuração
+- Incluir exemplos reais
+
+5. Se for SEGURANÇA:
+- Cobrir:
+  - tipos de ataques
+  - mecanismos de defesa
+  - controles
+  - criptografia
+- Destacar diferenças críticas
 
 ESTRUTURA:
 
 # ${topico}
 
-## 1. Definição e Funcionamento
-- Conceito direto
-- Como funciona
-- Onde é aplicado
+## 1. Fundamentos e Funcionamento
+- Definição técnica
+- Como funciona internamente
+- Componentes principais
 
-## 2. Pontos Críticos de Prova
-- Regras importantes
-- Classificações
-- Exceções
+## 2. Estrutura Completa do Tema (Nível Prova)
+- Listar TODOS os elementos relevantes:
+  - regras
+  - classificações
+  - categorias
+  - exceções
+- Estruturar como checklist
 
-## 3. Pegadinhas Comuns
-- Confusões frequentes
-- Termos que mudam o sentido (ex: “sempre”, “somente”)
-- Diferenças entre conceitos próximos
+## 3. Regras Técnicas e Comportamento
+- Funcionamento detalhado
+- Limitações
+- Condições de uso
 
-## 4. Aplicação Prática
-- Exemplo simples (código/comando se aplicável)
-- Situação real
+## 4. Diferenças Críticas
+- Comparar com conceitos semelhantes
+- Destacar o que a banca confunde
 
-## 5. Tabela Resumo
-| Conceito | Definição | Pegadinha |
-|----------|----------|----------|
+## 5. Exemplos e Aplicações
+- Exemplos técnicos (código se aplicável)
+- Cenários reais
 
-## 6. Simulado (Certo ou Errado)
-- 5 afirmações curtas e técnicas
-- Misture conceitos corretos e incorretos
-- Foque em detalhes que geram erro
+## 6. Pegadinhas de Prova
+- Erros comuns
+- Afirmações que parecem corretas
+- Termos que invalidam questões
+
+## 7. Tabela de Fixação
+| Conceito | Regra | Pegadinha |
+|----------|------|----------|
+
+## 8. Simulado (Certo ou Errado)
+- 8 itens técnicos
+- Foco em detalhes
 
 Gabarito comentado:
-- Indicar (Certo/Errado)
-- Explicar o erro ou acerto de forma objetiva
+- Explicação objetiva
+- Destacar pegadinha
 
 ---
 Gere em markdown.
