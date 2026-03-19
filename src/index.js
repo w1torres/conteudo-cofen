@@ -18,7 +18,7 @@ async function main() {
     console.log(`\n📚 Processando área: ${disc.area}`);
 
     for (const item of disc.topics) {
-
+  
       // 🔥 MODO TESTE (filtra apenas 1 tópico)
       if (TEST_MODE && item.id !== TEST_TOPIC_ID) {
         continue;

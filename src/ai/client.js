@@ -10,7 +10,7 @@ const openai = new OpenAI({
 export async function generateAIContent(prompt) {
   try {
     const response = await openai.chat.completions.create({
-      model: process.env.AI_MODEL || "gpt-4-turbo-preview",
+      model: process.env.AI_MODEL || "gpt-5.4",
       messages: [
         { 
           role: "system", 
