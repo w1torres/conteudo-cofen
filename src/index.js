@@ -33,10 +33,15 @@ async function main() {
 
       const filePath = path.join(process.cwd(), 'content', disc.id, `${safeFileName}.md`);
 
-      // 🔥 controle de regeneração
-      if (!FORCE_REGENERATE && await fs.pathExists(filePath)) {
-        console.log(`  ⏩ Pulando: ${item.topic}`);
-        continue;
+      const exists = await fs.pathExists(filePath);
+
+      if (!FORCE_REGENERATE && exists) {
+        const content = await fs.readFile(filePath, 'utf-8');
+
+        if (content.length > 200) {
+          console.log(`  ⏩ Pulando (já preenchido): ${item.topic}`);
+          continue;
+        }
       }
 
       console.log(`  📝 Gerando: ${item.topic}...`);
