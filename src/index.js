@@ -9,7 +9,7 @@ async function main() {
 
   const TEST_MODE = false; // 🔥 ativa/desativa teste
   const TEST_TOPIC_ID = "es-4"; // 👈 escolha o tópico
-  const FORCE_REGENERATE = true; // 🔥 força recriar conteúdo
+  const FORCE_REGENERATE = false; // 🔥 força recriar conteúdo
 
   const edital = await fs.readJson('./edital/edital.json');
   await prepareDirectories(edital);
@@ -36,9 +36,12 @@ async function main() {
       const exists = await fs.pathExists(filePath);
 
       if (!FORCE_REGENERATE && exists) {
+        
         const content = await fs.readFile(filePath, 'utf-8');
 
-        if (content.length > 200) {
+        const isOnlyFrontmatter = content.split('\n').length < 10;
+
+        if (!isOnlyFrontmatter) {
           console.log(`  ⏩ Pulando (já preenchido): ${item.topic}`);
           continue;
         }
